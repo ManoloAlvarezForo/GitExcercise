@@ -1,2 +1,2 @@
-# GitExcercise
-An Excercise
+# Github Excercise
+This is an excercise.
