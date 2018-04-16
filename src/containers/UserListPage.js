@@ -14,7 +14,12 @@ const styles ={
          flexDirection: 'column',
          display: 'flex', 
          justifyContent: 'center',
-         marginLeft: '10px'
+    },
+    title: {
+        flexDirection: 'column',
+         display: 'flex', 
+         justifyContent: 'center',
+        marginLeft: '10px'
     }
 }
 
@@ -29,7 +34,7 @@ class UserListPage extends Component {
         return (
             <div style={styles.mainContainer}>
                 <nav className="navbar" style={styles.navTitle} aria-label="main navigation">
-                    <div style={styles.navTitle}>
+                    <div style={styles.title}>
                             Git Users
                     </div>
                 </nav>
