@@ -6,6 +6,9 @@ const styles = {
         width: '23%',
         margin: '5px',
         borderRadius: '5px'
+    }, cardContent: { 
+        display: 'flex',
+        flexDirection: 'column' 
     }
 }
 
@@ -24,7 +27,7 @@ const RepoDetailCard = ({ repo }) => {
                     </div>
                 </div>
 
-                <div className="content" style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="content" style={styles.cardContent}>
                     <a href={repo.html_url}>#github</a>
                     <div>
                         {repo.description}

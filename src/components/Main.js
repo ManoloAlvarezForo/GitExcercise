@@ -5,12 +5,14 @@ const styles =  {
     titleContainer: {
       display:'flex',
       flexDirection:'row',
-      justifyContent:'center'
+      justifyContent:'center',
+      height: '100vh'
     },
     title: {
       display:'flex',
       flexDirection:'column',
-      justifyContent:'center'
+      justifyContent:'center',
+      fontSize: '50px'
     },
     buttonContainer: {
         display:'flex',
@@ -24,10 +26,10 @@ const Main = () => {
         <div>
             <div style={styles.titleContainer}>
             <div style={styles.title}>
-               <h1>Github Users Excercise</h1>
+               <div>Github Users Excercise</div>
                <div style={styles.buttonContainer}>
-               <Link to="/users">
-                 <button>Gihub Users</button>
+               <Link className="button is-primary" to="/users">
+                  Github Users
                </Link>
                </div>
             </div>
