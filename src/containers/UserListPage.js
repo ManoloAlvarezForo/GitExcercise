@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import UserCard from '../components/UserCard';
-import usersMock  from '../mocks/users'
+import { loadUsers } from '../actions/usersActions'
+import { connect } from 'react-redux';
+import store from '../store/store';
 
 const styles ={
     mainContainer: {
@@ -19,13 +21,9 @@ const styles ={
 
 class UserListPage extends Component {
 
-    constructor(props) {
-        super();
-        this.state = {
-            users: usersMock
-        }
+    componentDidMount() {
+        store.dispatch(loadUsers());
     }
-
     render() {
         
         return (
@@ -35,11 +33,27 @@ class UserListPage extends Component {
                             Git Users
                     </div>
                 </nav>
-                <CardList cards={ this.state.users.map((user, index) => <UserCard key={user.id} user={user} />)} />
+                <CardList cards={ this.props.users.map((user, index) => <UserCard key={user.id} user={user} />)} />
             </div>
         )
     }
 }
 
 
-export default UserListPage;
+const mapStateToProps = state => {
+    if (!state.users) {
+        state = {
+            users: []
+        }
+    }
+
+    return {
+        users: state.users
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserListPage);
