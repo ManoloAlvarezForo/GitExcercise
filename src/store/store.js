@@ -8,14 +8,18 @@ import thunk from 'redux-thunk';
  * @param {object} action The action parameter
  */
 const reducer = (state, action) => {
-  if (action.type === 'LOAD_USERS') {
-      return{
-          users: action.users
-      }
-  }
+    if (action.type === 'LOAD_USERS') {
+        return {
+            users: action.users
+        }
+    } else if (action.type === 'LOAD_REPOS') {
+        return {
+            repos: action.repos
+        }
+    }
 
-  return state;
+    return state;
 }
 
 
-export default createStore(reducer, { users: []}, applyMiddleware(thunk));
+export default createStore(reducer, { users: [], repos: [] }, applyMiddleware(thunk));
