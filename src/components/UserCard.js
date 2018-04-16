@@ -20,7 +20,7 @@ const UserCard = ({ user, page = 1 }) => {
                     <a href={user.html_url}>#github</a>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Link to="" className="button is-primary is-outlined">Repos
+                    <Link to={`/user/${user.login}/${page}`} className="button is-primary is-outlined">Repos
                     </Link>
                 </div>
             </div>

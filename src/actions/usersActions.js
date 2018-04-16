@@ -1,9 +1,5 @@
 import axios from 'axios';
-
-/**
- * Constant to represent the users url to get all users for github API.
- */
-const usersUrl = 'https://api.github.com/users';
+import sharedConst from '../shared/sharedConst'
 
 /**
  * Loads the users according the request.
@@ -12,7 +8,7 @@ const usersUrl = 'https://api.github.com/users';
  */
 const loadUsers = () => {
     return dispatch => {
-       return axios.get(usersUrl)
+       return axios.get(sharedConst.URL_GIT_USERS)
         .then(response => {
             dispatch({
                 type: "LOAD_USERS",
